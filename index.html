@@ -6,9 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- fontawesome -->
         <script src="https://kit.fontawesome.com/8358df18ed.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" 
-        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+            integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <!-- CSS -->
         <link rel="stylesheet" href="css/style.css" />
 
@@ -19,10 +23,11 @@
             <input required maxlength="15" type="text" placeholder="당신의 이름은?" />
             <button class="loginBtn">Log In</button>
         </form>
+        <h3 id="today"></h3>
         <h2 id="clock">00:00:00</h2>
         <h1 id="greeting" class="hidden"></h1>
         <form id="todo_form">
-            <input type="text" placeholder="오늘의 할 일을 적어보세요!" required>
+            <input type="text" placeholder="오늘의 할 일을 적어보세요!" required />
         </form>
         <ul id="todo_list">
             <!-- 여기에 Todo list -->
@@ -33,16 +38,14 @@
         <div id="weather">
             <span></span>
             <span></span>
-            <span></span>        
+            <span></span>
         </div>
-
-        <!-- <button class="logoutBtn hidden">Log Out</button> -->
 
         <!-- JS -->
         <script src="js/greeting.js"></script>
         <script src="js/clock.js"></script>
         <script src="js/quotes.js"></script>
-        <script src="js/background.js"></script>
+        <!-- <script src="js/background.js"></script> -->
         <script src="js/todo.js"></script>
         <script src="js/weather.js"></script>
     </body>

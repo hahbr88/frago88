@@ -6,10 +6,8 @@ const greeting = document.querySelector("#greeting");
 // const loginBtn = document.querySelector(".loginBtn")
 // const logoutBtn = document.querySelector(".logoutBtn")
 
-
 const HIDDEN_CLASS_NAME = "hidden";
 const STORAGE_KEY = "username";
-
 
 function onLoginSubmit(event) {
     event.preventDefault(); //기본 동작을 막는다.
@@ -18,7 +16,6 @@ function onLoginSubmit(event) {
     localStorage.setItem(STORAGE_KEY, userName);
     showGreetings();
 }
-
 
 function showGreetings() {
     const userName = localStorage.getItem(STORAGE_KEY);
@@ -29,7 +26,7 @@ function showGreetings() {
 
 const savedUserName = localStorage.getItem(STORAGE_KEY);
 
-// TODO 
+// TODO
 // 로그아웃도 구현해보자
 
 // 로그아웃 버튼을 누르면 스토리지에 있는 username을 삭제하고 페이지를 reload 하는 함수
@@ -44,20 +41,12 @@ const savedUserName = localStorage.getItem(STORAGE_KEY);
 // }
 // logoutBtn.addEventListener('click', logOut)
 
-
 if (savedUserName === null) {
     loginForm.classList.remove(HIDDEN_CLASS_NAME);
     loginForm.addEventListener("submit", onLoginSubmit);
 } else {
     showGreetings();
 }
-
-
-
-
-
-
-
 
 // addEventListener() 를 만들고 거기에 함수를 준걸 JS가 확인하면, JS는 링크를 클릭(이벤트)할 때 함수를 실행한다.
 // addEventListener() 안에 함수를 넣을 때 onLoginSubmit(), onClickLink() 이런식으로 괄호를 붙이게 되면
