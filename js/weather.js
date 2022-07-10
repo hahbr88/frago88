@@ -9,8 +9,7 @@ function onGeoSuc(position) {
     fetch(API_URL).then(response => response.json())
     .then(data => {
         const weather = document.querySelector('#weather span:first-child');
-        const name = data.name
-        // const weather = data.weather[0].main
+        weather = data.weather[0].main
         console.log(data.weather[0].main)
         console.log(data.weather[0].description)
         console.log(data.name)
@@ -23,3 +22,18 @@ function onGeoErr() {
 }
 
 navigator.geolocation.getCurrentPosition(onGeoSuc, onGeoErr)
+
+
+
+
+let weatherIcon = {
+    '01' : 'fas fa-sun',
+    '02' : 'fas fa-cloud-sun',
+    '03' : 'fas fa-cloud',
+    '04' : 'fas fa-cloud-meatball',
+    '09' : 'fas fa-cloud-sun-rain',
+    '10' : 'fas fa-cloud-showers-heavy',
+    '11' : 'fas fa-poo-storm',
+    '13' : 'far fa-snowflake',
+    '50' : 'fas fa-smog'
+  };

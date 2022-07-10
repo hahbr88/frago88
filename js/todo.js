@@ -33,7 +33,7 @@ function writeTodo(newTodo) {
     li.appendChild(span)
     li.appendChild(btn)
     span.innerText = newTodo.text;
-    btn.innerText = '❌';
+    btn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
     btn.addEventListener('click', delTodo)
     // console.log(li)
     todoList.appendChild(li)
