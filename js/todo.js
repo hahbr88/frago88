@@ -14,20 +14,25 @@ function saveTodos(){
 
 function delTodo(event) {
     // console.log(event.target.parentNode) 아래랑 같음
-    console.log(event.target.parentElement)
+    // console.log(event.target.parentElement)
     const li = event.target.parentElement;
+    // console.log(li.id)
+    // console.log(typeof(li.id))
     li.remove();
+    todos = todos.filter(todo => todo.id != parseInt(li.id));
+    saveTodos()
 
 }
 
 function writeTodo(newTodo) {
     const li = document.createElement('li');
+    li.id = newTodo.id
     const span = document.createElement('span')
     const btn = document.createElement('button')
     // console.log(newTodo, '작성!')
     li.appendChild(span)
     li.appendChild(btn)
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     btn.innerText = '❌';
     btn.addEventListener('click', delTodo)
     // console.log(li)
@@ -40,8 +45,12 @@ function onTodoSubmit(event) {
     event.preventDefault(); //기본 동작을 막는다.
     const newTodo = todoInput.value;
     todoInput.value = "";
-    todos.push(newTodo)
-    writeTodo(newTodo)
+    const newTodoObj = {
+        'text': newTodo,
+        'id' : Date.now()
+    }
+    todos.push(newTodoObj);
+    writeTodo(newTodoObj);
     saveTodos()
 }
 
@@ -60,3 +69,12 @@ if (savedList !== null){
 
 
 }
+
+function filtId(id) {
+// 새로운 array에서 object를 계속 유지하려면 true를 리턴해야한다.
+// 유지 하지 않으려면 false 를 리턴한다.
+    if (id !== id) {
+
+    }   
+}
+
