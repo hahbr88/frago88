@@ -8,11 +8,23 @@ function onGeoSuc(position) {
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=kr&appid=${API_KEY}`
     fetch(API_URL).then(response => response.json())
     .then(data => {
-        const weather = document.querySelector('#weather span:first-child');
-        weather = data.weather[0].main
+        const WIcon = document.querySelector('#weather span:first-child')
+        const WMain = document.querySelector('#weather span:nth-child(2)');
+        const WDesc = document.querySelector('#weather span:last-child');
+        const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+        console.log(WIcon)
+        // console.log(WMain)
+        // console.log(WDesc)
+        console.log(iconUrl)
+        WIcon.innerHTML = `<img src="${iconUrl}">`;
+        WMain.innerText = data.weather[0].main
+        WDesc.innerText = data.weather[0].description
+        
+
         console.log(data.weather[0].main)
         console.log(data.weather[0].description)
         console.log(data.name)
+        console.log(data.weather[0].icon)
     })
 
 }
@@ -22,18 +34,3 @@ function onGeoErr() {
 }
 
 navigator.geolocation.getCurrentPosition(onGeoSuc, onGeoErr)
-
-
-
-
-let weatherIcon = {
-    '01' : 'fas fa-sun',
-    '02' : 'fas fa-cloud-sun',
-    '03' : 'fas fa-cloud',
-    '04' : 'fas fa-cloud-meatball',
-    '09' : 'fas fa-cloud-sun-rain',
-    '10' : 'fas fa-cloud-showers-heavy',
-    '11' : 'fas fa-poo-storm',
-    '13' : 'far fa-snowflake',
-    '50' : 'fas fa-smog'
-  };

@@ -19,7 +19,7 @@ function delTodo(event) {
     // console.log(li.id)
     // console.log(typeof(li.id))
     li.remove();
-    todos = todos.filter(todo => todo.id != parseInt(li.id));
+    todos = todos.filter(todo => todo.id !== parseInt(li.id));
     saveTodos()
 
 }
@@ -33,7 +33,7 @@ function writeTodo(newTodo) {
     li.appendChild(span)
     li.appendChild(btn)
     span.innerText = newTodo.text;
-    btn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+    btn.innerText = '❌';
     btn.addEventListener('click', delTodo)
     // console.log(li)
     todoList.appendChild(li)
