@@ -12,7 +12,7 @@ getClock()
 setInterval(getClock, 1000)
 
 function simpleClock() {
-    time = new Date().toTimeString().split(" ")[0];
+    const time = new Date().toTimeString().split(" ")[0];
     clock.innerText = time;
 }
 simpleClock();
