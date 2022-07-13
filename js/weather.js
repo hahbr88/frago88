@@ -33,3 +33,7 @@ function onGeoErr() {
 }
 
 navigator.geolocation.getCurrentPosition(onGeoSuc, onGeoErr);
+
+
+
+// weather.js 에 변동사항
