@@ -41,3 +41,6 @@ navigator.geolocation.getCurrentPosition(onGeoSuc, onGeoErr);
 // weather.js 에 추가적인 변동사항
 
 // weather.js 에 또 한번 추가적인 변동사항
+
+
+// 병합후 푸시하고 작업작업
