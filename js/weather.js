@@ -44,3 +44,4 @@ navigator.geolocation.getCurrentPosition(onGeoSuc, onGeoErr);
 
 
 // 병합후 푸시하고 작업작업
+// 커밋 하고 또또 작업작업
